@@ -1,0 +1,63 @@
+{
+    "portalId": 22709057,
+    "userMessage": {
+        "message": "123457",
+        "quickReply": null
+    },
+    "parsedResult": null,
+    "bot": {
+        "nickname": "Test chatflow",
+        "conversationChannelType": "WEB",
+        "chatflowId": 8086273
+    },
+    "module": {
+        "botNickname": "Test chatflow",
+        "fallbackNextModuleNickname": null,
+        "failureNextModuleNickname": null,
+        "moduleType": "WEBHOOK",
+        "nickname": "Webhook 2",
+        "prompt": null,
+        "promptHtml": null,
+        "config": {
+            "id": 608614,
+            "timeout": 3000,
+            "customPayload": null,
+            "expectingResponse": true
+        }
+    },
+    "session": {
+        "vid": 6401,
+        "conversationId": 3339249959,
+        "botNickname": "Test chatflow",
+        "currentModuleNickname": "Webhook 2",
+        "sessionStartedAt": 1666004160786,
+        "lastInteractionAt": 1666004167876,
+        "state": "ACTIVE",
+        "customState": {},
+        "responseExpected": false,
+        "parsedResponses": {
+            "Ask for problem": {
+                "parsedResponse": "Mijn afval is niet opgehaald",
+                "parsedQuickReplyLabel": "Mijn afval is niet opgehaald",
+                "customState": {},
+                "propertyChanges": {},
+                "propertyValueType": "STRING",
+                "success": true,
+                "preempted": false,
+                "executionTime": 1666004160869
+            },
+            "Get order number": {
+                "parsedResponse": "123457",
+                "parsedQuickReplyLabel": null,
+                "customState": {},
+                "propertyChanges": {},
+                "propertyValueType": "STRING",
+                "success": true,
+                "preempted": false,
+                "executionTime": 1666004167815
+            }
+        },
+        "properties": {}
+    },
+    "customPayload": null
+}

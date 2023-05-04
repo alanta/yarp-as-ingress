@@ -1,0 +1,3 @@
+GET http://localhost:5204/api/hello/world
+X-Request-Timestamp:{{$timestamp}}
+X-Request-Signature:ocaTQ/gsN3dn30ble3E9MDKR/PVmgZBRDaJZDUqhQes=
