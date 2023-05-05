@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YarpIngress.Tests", "YarpIn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{CEB02B12-815C-44A0-928B-951488DE88B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frontend", "Frontend\Frontend.csproj", "{94AFA9BF-DD83-46ED-9E1F-B130CC30B09A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{CEB02B12-815C-44A0-928B-951488DE88B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEB02B12-815C-44A0-928B-951488DE88B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEB02B12-815C-44A0-928B-951488DE88B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94AFA9BF-DD83-46ED-9E1F-B130CC30B09A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94AFA9BF-DD83-46ED-9E1F-B130CC30B09A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94AFA9BF-DD83-46ED-9E1F-B130CC30B09A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94AFA9BF-DD83-46ED-9E1F-B130CC30B09A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

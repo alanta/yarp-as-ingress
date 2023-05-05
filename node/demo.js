@@ -5,7 +5,7 @@ const request = require('request');
 const crypto = require('crypto');
 
 const AuthType = 'HMAC-SHA256'
-const AuthKeyId = 'Demo'
+const AuthKeyId = 'Test'
 const AuthKeySecret = 'SECRET'
 
 requestWithHMAC = (payload, timestamp, callback) => {
