@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YarpIngress", "YarpIngress\YarpIngress.csproj", "{42014CA2-2914-411D-987D-F307F9B4CE84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YarpIngress.Tests", "YarpIngress.Tests\YarpIngress.Tests.csproj", "{8D008BEE-C8A6-4426-92D6-A7BB5989D2E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{CEB02B12-815C-44A0-928B-951488DE88B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42014CA2-2914-411D-987D-F307F9B4CE84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42014CA2-2914-411D-987D-F307F9B4CE84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42014CA2-2914-411D-987D-F307F9B4CE84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42014CA2-2914-411D-987D-F307F9B4CE84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D008BEE-C8A6-4426-92D6-A7BB5989D2E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D008BEE-C8A6-4426-92D6-A7BB5989D2E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D008BEE-C8A6-4426-92D6-A7BB5989D2E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D008BEE-C8A6-4426-92D6-A7BB5989D2E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEB02B12-815C-44A0-928B-951488DE88B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEB02B12-815C-44A0-928B-951488DE88B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEB02B12-815C-44A0-928B-951488DE88B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEB02B12-815C-44A0-928B-951488DE88B4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
