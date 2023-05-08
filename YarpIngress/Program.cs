@@ -22,9 +22,7 @@ builder.Services.AddAuthorization(options =>
 });
 
 builder.Services.AddReverseProxy()
-    .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"))
-    .AddConfigFilter<ContainerAddressInterceptor>();
-
+    .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
 
 var app = builder.Build();
 
