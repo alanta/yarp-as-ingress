@@ -22,7 +22,10 @@ builder.Services.AddAuthorization(options =>
 });
 
 builder.Services.AddReverseProxy()
-    .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
+    .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"))
+    .AddConfigFilter<ContainerAddressInterceptor>();
+
+
 var app = builder.Build();
 
 app.UseRouting();
