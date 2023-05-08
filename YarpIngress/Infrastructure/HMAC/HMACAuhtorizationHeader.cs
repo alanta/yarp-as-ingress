@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Primitives;
-using YarpIngress.Infrastructure;
+
+namespace YarpIngress.Infrastructure.HMAC;
 
 public record HMACAuhtorizationHeader(string KeyId, string Signature)
 {

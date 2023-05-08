@@ -1,10 +1,8 @@
-using System.Net.Http.Headers;
-using System.Reflection.Metadata;
 using System.Security.Cryptography;
 using System.Text;
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
-using YarpIngress.Infrastructure;
+
+namespace YarpIngress.Infrastructure.HMAC;
 
 public class RequestValidator
 {
@@ -23,7 +21,7 @@ public class RequestValidator
         
         if ( !authValid )
         {
-            _logger.LogError("Incoming request does not contain a valid Authorization header");
+            _logger.LogError("Incoming request to {scheme}://{host}{path} does not contain a valid Authorization header", req.Scheme, req.Host, req.Path );
             _logger.LogDebug("Request headers: {Headers}", string.Join(", ", req.Headers.Keys));
             return false;
         }
@@ -56,25 +54,25 @@ public class RequestValidator
             return false;
         }
 
-         return true;
+        return true;
     }
 
     /*public bool ValidateSignature(HttpRequest req, string body, Func<string, string> getApiSecret )
-    {
-        // https://doc.traefik.io/traefik-enterprise/middlewares/hmac/
-        // Authorization: Hmac keyId="secret-id-1",algorithm="hmac-sha256",headers="(request-target) (created) (expires) host x-example",signature="c29tZXNpZ25hdHVyZQ==",created="1584453022",expires="1584453032"
-        
-        // https://learn.microsoft.com/en-us/azure/communication-services/tutorials/hmac-header-tutorial?pivots=programming-language-csharp
-        // Authorization: "HMAC-SHA256 SignedHeaders=x-ms-date;host;x-ms-content-sha256&Signature=<hmac-sha256-signature>"
+{
+    // https://doc.traefik.io/traefik-enterprise/middlewares/hmac/
+    // Authorization: Hmac keyId="secret-id-1",algorithm="hmac-sha256",headers="(request-target) (created) (expires) host x-example",signature="c29tZXNpZ25hdHVyZQ==",created="1584453022",expires="1584453032"
+    
+    // https://learn.microsoft.com/en-us/azure/communication-services/tutorials/hmac-header-tutorial?pivots=programming-language-csharp
+    // Authorization: "HMAC-SHA256 SignedHeaders=x-ms-date;host;x-ms-content-sha256&Signature=<hmac-sha256-signature>"
 
-        // Azue AppConfig
-        // https://learn.microsoft.com/en-us/azure/azure-app-configuration/rest-api-authentication-hmac
-        // Date: Fri, 11 May 2018 18:48:36 GMT
-        // x-ms-content-sha256: {SHA256 hash of the request body}
-        // Authorization: HMAC-SHA256 Credential={Access Key ID}&SignedHeaders=x-ms-date;host;x-ms-content-sha256&Signature={Signature}
-        
-        var authHeader = req.Headers.Authorization;
-    }*/
+    // Azue AppConfig
+    // https://learn.microsoft.com/en-us/azure/azure-app-configuration/rest-api-authentication-hmac
+    // Date: Fri, 11 May 2018 18:48:36 GMT
+    // x-ms-content-sha256: {SHA256 hash of the request body}
+    // Authorization: HMAC-SHA256 Credential={Access Key ID}&SignedHeaders=x-ms-date;host;x-ms-content-sha256&Signature={Signature}
+    
+    var authHeader = req.Headers.Authorization;
+}*/
 
     public (bool success, string id, string[] roles) ValidateSignature(HttpRequest req, string body )
     {
@@ -87,7 +85,7 @@ public class RequestValidator
 
         // Handle reverse proxy headers
         var host = req.Headers.TryGetValue("X-Forwarded-Host", out var hostHeader) ? hostHeader.FirstOrDefault() : req.Host.Value;
-        var scheme =  req.Headers.TryGetValue("X-Forwarded-Scheme", out var schemeHeader ) ? schemeHeader.FirstOrDefault() : req.Scheme;
+        var scheme = req.Headers.TryGetValue("X-Forwarded-Proto", out var schemeHeader ) ? schemeHeader.FirstOrDefault() : req.Scheme; // Envoy uses X-Forwarded-Proto
         var path = $"{(string.IsNullOrEmpty(_options.BaseUri) ? "" : "/" + _options.BaseUri)}{req.Path.Value}";
 
         var stringToHash = $"{req.Method}{scheme}://{host}{path}{signatureTimeStamp}{body}";
@@ -101,6 +99,7 @@ public class RequestValidator
         if (string.IsNullOrWhiteSpace(secret))
         {
             _logger.LogWarning("No API key found with id {keyId}", header.KeyId);
+            return (false, "", Array.Empty<string>());
         }
 
         var signatureToMatch = CalculateHash(secret, stringToHash);

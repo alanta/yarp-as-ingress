@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Primitives;
 using Yarp.ReverseProxy.Forwarder;
 using YarpIngress.Infrastructure;
+using YarpIngress.Infrastructure.HMAC;
 using YarpIngress.Tests.Tools;
 
 namespace YarpIngress.Tests;

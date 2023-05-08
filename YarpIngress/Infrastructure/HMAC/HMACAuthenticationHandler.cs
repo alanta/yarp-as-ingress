@@ -3,7 +3,7 @@ using System.Text.Encodings.Web;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Options;
 
-namespace YarpIngress.Infrastructure;
+namespace YarpIngress.Infrastructure.HMAC;
 
 internal class HMACAuthenticationHandler : AuthenticationHandler<HMACAuthenticationSchemeOptions>
 {

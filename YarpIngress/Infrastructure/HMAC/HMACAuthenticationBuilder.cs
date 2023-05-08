@@ -1,4 +1,4 @@
-namespace YarpIngress.Infrastructure;
+namespace YarpIngress.Infrastructure.HMAC;
 
 public class HMACAuthenticationBuilder
 {

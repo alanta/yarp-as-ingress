@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Authentication;
 
-namespace YarpIngress.Infrastructure;
+namespace YarpIngress.Infrastructure.HMAC;
 
 public class HMACAuthenticationSchemeOptions : AuthenticationSchemeOptions
 {

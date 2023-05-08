@@ -1,5 +1,5 @@
-using Microsoft.Extensions.DependencyInjection;
 using YarpIngress.Infrastructure;
+using YarpIngress.Infrastructure.HMAC;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddApplicationInsightsTelemetry();
