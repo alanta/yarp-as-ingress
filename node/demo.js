@@ -40,7 +40,11 @@ requestWithHMAC = (payload, timestamp, callback) => {
 
   options.headers['Authorization']= `${AuthType} id=${AuthKeyId};signature=${signature}`;
 
+  var startTime = process.hrtime();
   request(options, function (error, response, body) {
+    var elapsed = process.hrtime(startTime)[1] / 1000000;
+    console.log("Request took: "+process.hrtime(start)[0] + "s, " + elapsed.toFixed(1) + "ms");
+
     if(error)
       {
         console.log("Error: "+error)
