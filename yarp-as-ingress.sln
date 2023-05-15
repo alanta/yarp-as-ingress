@@ -3,23 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YarpIngress", "YarpIngress\YarpIngress.csproj", "{42014CA2-2914-411D-987D-F307F9B4CE84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YarpIngress", "YarpIngress\YarpIngress.csproj", "{42014CA2-2914-411D-987D-F307F9B4CE84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YarpIngress.Tests", "YarpIngress.Tests\YarpIngress.Tests.csproj", "{8D008BEE-C8A6-4426-92D6-A7BB5989D2E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YarpIngress.Tests", "YarpIngress.Tests\YarpIngress.Tests.csproj", "{8D008BEE-C8A6-4426-92D6-A7BB5989D2E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{CEB02B12-815C-44A0-928B-951488DE88B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{CEB02B12-815C-44A0-928B-951488DE88B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frontend", "Frontend\Frontend.csproj", "{94AFA9BF-DD83-46ED-9E1F-B130CC30B09A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frontend", "Frontend\Frontend.csproj", "{94AFA9BF-DD83-46ED-9E1F-B130CC30B09A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadTester", "LoadTester\LoadTester.csproj", "{481C0024-7A7D-45C6-AC87-3688E2DC5F4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadTester", "LoadTester\LoadTester.csproj", "{481C0024-7A7D-45C6-AC87-3688E2DC5F4A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{9F855B0B-0576-401F-8F3F-F80A7FD24D10}"
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{42014CA2-2914-411D-987D-F307F9B4CE84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -42,5 +44,11 @@ Global
 		{481C0024-7A7D-45C6-AC87-3688E2DC5F4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{481C0024-7A7D-45C6-AC87-3688E2DC5F4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{481C0024-7A7D-45C6-AC87-3688E2DC5F4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F112105C-734A-44E0-9533-9CCD6A266006}
 	EndGlobalSection
 EndGlobal

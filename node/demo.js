@@ -11,7 +11,7 @@ const AuthKeySecret = 'SECRET'
 requestWithHMAC = (payload, timestamp, callback) => {
   const options = {
     url: 'http://localhost:5204/api/hello/world',
-    rejectUnauthorized: false, // for local testing only!
+    rejectUnauthorized: false, // disables TLS cert check, us this for local testing only!
     method: 'GET',
     body:  payload ? JSON.stringify(payload) : null,
     headers: {
@@ -43,7 +43,7 @@ requestWithHMAC = (payload, timestamp, callback) => {
   var startTime = process.hrtime();
   request(options, function (error, response, body) {
     var elapsed = process.hrtime(startTime)[1] / 1000000;
-    console.log("Request took: "+process.hrtime(start)[0] + "s, " + elapsed.toFixed(1) + "ms");
+    console.log("Request took: "+process.hrtime(startTime)[0] + "s, " + elapsed.toFixed(1) + "ms");
 
     if(error)
       {

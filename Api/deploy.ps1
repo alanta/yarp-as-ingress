@@ -1,4 +1,4 @@
-$insightsConnection=$(az resource show -g sample-rg -n insights-for-sample --resource-type "microsoft.insights/components" --query properties.InstrumentationKey --output tsv)
+$insightsConnection=$(az resource show -g sample-rg -n insights-for-sample --resource-type "microsoft.insights/components" --query properties.ConnectionString --output tsv)
 
 az containerapp up `
   --name api `

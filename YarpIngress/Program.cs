@@ -36,5 +36,5 @@ app.MapReverseProxy();
 
 app.Run();
 
-// This is to enable tests to attacht to the program
+// This is to enable tests to attach to the program
 public partial class Program { }
