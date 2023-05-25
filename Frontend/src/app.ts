@@ -1,2 +1,3 @@
-import './my-element';
+import './layout';
+import './api-action';
 import './styles.css';
