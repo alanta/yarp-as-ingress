@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Primitives;
 using Yarp.ReverseProxy.Forwarder;
-using YarpIngress.Infrastructure;
 using YarpIngress.Infrastructure.HMAC;
 using YarpIngress.Tests.Tools;
 
@@ -21,7 +20,7 @@ public class When_invoking_an_api_method
         var client = server.CreateClient();
 
         // Act
-        var result = await client.GetAsync("/api/test");
+        var result = await client.GetAsync("/secure-api/test");
 
         // Assert
         result.StatusCode.Should().Be(HttpStatusCode.Unauthorized);
@@ -36,7 +35,7 @@ public class When_invoking_an_api_method
         var server = new WebApplicationFactory<Program>();
         var client = server.CreateClient();
 
-        var request = new HttpRequestMessage(HttpMethod.Post, "/api/test");
+        var request = new HttpRequestMessage(HttpMethod.Post, "/secure-api/test");
         request.Headers.Add(HMACAuthenticationSchemeOptions.DefaultTimestampHeader, DateTimeOffset.Now.ToUnixTimeSeconds().ToString());
         request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("HMAC-SHA26", "id=test;signature=nope");
 
