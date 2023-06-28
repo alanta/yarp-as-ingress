@@ -16,7 +16,7 @@ internal class HMACAuthenticationHandler : AuthenticationHandler<HMACAuthenticat
 
     protected async override Task<AuthenticateResult> HandleAuthenticateAsync()
     {
-        if( !_validator.HasValidHeaders(Request) ){
+        if( Request.Headers.Authorization.Count <= 0 && !_validator.HasValidHeaders(Request) ){
             return AuthenticateResult.NoResult();
         }
 

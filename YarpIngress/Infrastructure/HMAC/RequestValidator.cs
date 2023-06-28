@@ -21,7 +21,7 @@ public class RequestValidator
         
         if ( !authValid )
         {
-            _logger.LogError("Incoming request to {scheme}://{host}{path} does not contain a valid Authorization header", req.Scheme, req.Host, req.Path );
+            _logger.LogDebug("Incoming request to {scheme}://{host}{path} does not contain a valid Authorization header", req.Scheme, req.Host, req.Path );
             _logger.LogDebug("Request headers: {Headers}", string.Join(", ", req.Headers.Keys));
             return false;
         }
